@@ -24,7 +24,7 @@ function Login(){
                 secureTextEntry
             />
             <TouchableOpacity style={styles.button}>
-                <Text style={styles.btnLoginText}> Sign Up </Text>
+                <Text style={styles.btnLoginText}> Sign In </Text>
             </TouchableOpacity>
 
 
