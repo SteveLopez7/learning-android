@@ -1,14 +1,25 @@
 import React, {useState} from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
 import Login from './src/screens/Login';
+import Register from './src/screens/Register';
 import Splash from './src/screens/Splash';
 
-export default function App(){
+const Stack = createStackNavigator();
 
+export default function App(){
   const [showSplash, setShowSplash] = useState(true);
 
   if (showSplash) {
     return <Splash onFinish={()=>setShowSplash(false)} />;
   }
   
-  return <Login/>
+  return (
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="Register">
+        <Stack.Screen name="Register" component={Register} options={{ title: 'Crear Cuenta' }} />
+        <Stack.Screen name="Login" component={Login} options={{ title: 'Iniciar Sesión' }} />
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
 }
