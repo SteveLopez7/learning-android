@@ -35,8 +35,7 @@ function Login({ navigation }: any){
             }
 
             if (data.session) {
-                Alert.alert('Éxito', 'Inicio de sesión exitoso! (Home se desarrollará después)');
-                // Por ahora no navegamos al Home
+                navigation.navigate('Main');
             }
         } catch (err) {
             Alert.alert('Error', 'Problema de conexión');
